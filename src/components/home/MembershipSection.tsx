@@ -5,10 +5,61 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MEMBERSHIP_PLANS } from "@/lib/membership";
 
+// All services from the Power Health flyer – included in EVERY package
+const commonServices = [
+  "50+ Premium & Advanced Equipment",
+  "8000 Sq. Ft. Spacious Workout Area",
+  "2 Floor Access for Better Workout",
+  "Steam & Shower Facility",
+  "Advanced Treadmill + BMI / Height / Weight & Goal Setting",
+  "Free BMI Assessment",
+  "Personalized Diet Plan & Workout Plan",
+  "One-to-One Personal Training",
+  "General Training",
+  "Certified & Experienced Trainers",
+  "Free Parking",
+  "Group Activities – Yoga, Zumba, Aerobics",
+  "Advance Fitness Classes – HIIT, Boxing/Plank, Fat Loss/Weight Loss, Flexibility/Mobility, Hyrox Class, Stepper Session",
+];
+
 const plans = [
-  { ...MEMBERSHIP_PLANS[0], features: ["24/7 Gym Access", "50+ Modern Equipment", "Cardio & Strength Training", "Locker & Shower", "Free Energy Drinks"] },
-  { ...MEMBERSHIP_PLANS[1], features: ["Everything in 3 Months", "Personal Trainer Sessions", "Diet Consultation", "Pick & Drop (3km)", "Guest Passes", "Priority Support"] },
-  { ...MEMBERSHIP_PLANS[2], features: ["Everything in 6 Months (including Pickup & Drop 3 km)", "Unlimited PT Sessions", "Custom Meal Plans", "VIP Locker", "Free Merchandise", "30 Days Freeze"] },
+  {
+    ...MEMBERSHIP_PLANS[0],
+    name: "3 Months",
+    description: "Perfect starter plan",
+    features: [
+      ...commonServices,
+      "24/7 Gym Access",
+      "Locker & Shower",
+    ],
+  },
+  {
+    ...MEMBERSHIP_PLANS[1],
+    name: "6 Months",
+    description: "Most popular choice",
+    popular: true,
+    features: [
+      ...commonServices,
+      "Everything in 3 Months",
+      "Priority Support",
+      "Guest Passes",
+      "Pick & Drop (3km)",
+    ],
+  },
+  {
+    ...MEMBERSHIP_PLANS[2],
+    name: "12 Months",
+    description: "Best value & maximum results",
+    features: [
+      ...commonServices,
+      "Everything in 6 Months (including Pickup & Drop 3 km)",
+      "Unlimited PT Sessions",
+      "Custom Meal Plans",
+      "VIP Locker",
+      "Free Merchandise",
+      "30 Days Freeze",
+    ],
+  },
 ];
 
 const containerVariants = {
@@ -32,14 +83,12 @@ const cardVariants = {
 export function MembershipSection() {
   return (
     <section className="relative py-24 bg-black overflow-hidden">
-
       {/* Green Glow Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 bg-green-500/10 blur-[140px] rounded-full" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -57,7 +106,8 @@ export function MembershipSection() {
             </span>
           </h2>
           <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            Flexible pricing built for beginners to elite athletes
+            Flexible pricing built for beginners to elite athletes.  
+            All packages include every Power Health service.
           </p>
         </motion.div>
 
@@ -96,7 +146,6 @@ export function MembershipSection() {
                 <p className="text-gray-400 text-sm mt-2">
                   {plan.description}
                 </p>
-
                 <div className="flex justify-center items-end gap-1 mt-4">
                   <span className="text-gray-400">₹</span>
                   <motion.span
@@ -110,7 +159,6 @@ export function MembershipSection() {
                   </motion.span>
                   <span className="text-gray-400 text-sm">/person</span>
                 </div>
-
                 {plan.couplePrice && (
                   <p className="text-sm text-gray-400 mt-2">
                     Couple: ₹{plan.couplePrice}
@@ -128,13 +176,13 @@ export function MembershipSection() {
                 {plan.features.map((feature, i) => (
                   <motion.li
                     key={feature}
-                    className="flex items-center gap-3"
+                    className="flex items-start gap-3"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 + i * 0.05 }}
                   >
-                    <span className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center shadow-[0_0_10px_rgba(34,197,94,0.6)]">
+                    <span className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center shadow-[0_0_10px_rgba(34,197,94,0.6)] mt-0.5 shrink-0">
                       <Check className="w-3 h-3 text-black" />
                     </span>
                     <span className="text-gray-300 text-sm">{feature}</span>
