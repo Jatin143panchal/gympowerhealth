@@ -19,7 +19,7 @@ export default function Contact() {
 
     const { name, email, phone, message } = formData;
 
-    const whatsappNumber = "919217441307"; // without +
+    const whatsappNumber = "919217451307 "; // without +
 
     const text = `
 Hello Power Health Gym,
@@ -85,7 +85,7 @@ PIN Code: 201318`,
                     {
                       icon: Phone,
                       title: "Phone Number",
-                      text: "+91 92174 41307 / +91 92174 51307",
+                      text: " 9217451307",
                     },
                     {
                       icon: Mail,
