@@ -4,25 +4,72 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-
 import { MEMBERSHIP_PLANS } from "@/lib/membership";
 
+// Common services from Power Health flyer – added to ALL packages
+const commonServices = [
+  "50+ Premium & Advanced Equipment",
+  "8000 Sq. Ft. Spacious Workout Area",
+  "2 Floor Access for Better Workout",
+  "Steam & Shower Facility",
+  "Advanced Treadmill + BMI / Height / Weight & Goal Setting",
+  "Free BMI Assessment",
+  "Personalized Diet Plan & Workout Plan",
+  "One-to-One Personal Training",
+  "General Training",
+  "Certified & Experienced Trainers",
+  "Free Parking",
+  "Group Activities – Yoga, Zumba, Aerobics",
+  "Advance Fitness Classes – HIIT, Boxing/Plank, Fat Loss/Weight Loss, Flexibility/Mobility, Hyrox Class, Stepper Session",
+];
+
 const plans = [
-  { ...MEMBERSHIP_PLANS[0], features: ["Full gym access 24/7", "50+ modern equipment", "Cardio & strength training", "Locker room & changing", "Complimentary drinks"] },
-  { ...MEMBERSHIP_PLANS[1], features: ["Everything in 3 Months", "Personal trainer sessions", "Diet consultation", "Pick & drop within 3km", "Guest passes", "Priority support"] },
-  { ...MEMBERSHIP_PLANS[2], features: ["Everything in 6 Months", "Unlimited PT sessions", "Custom meal plans", "VIP locker", "Free merchandise", "Freeze up to 30 days", "Priority equipment"] },
+  {
+    ...MEMBERSHIP_PLANS[0],
+    name: "3 Months",
+    description: "Perfect starter plan",
+    features: [
+      ...commonServices,
+      "Full gym access",
+      "Locker room & changing",
+    ],
+  },
+  {
+    ...MEMBERSHIP_PLANS[1],
+    name: "6 Months",
+    description: "Most popular choice",
+    popular: true,
+    features: [
+      ...commonServices,
+      "Everything in 3 Months",
+      "Priority support",
+      "Guest passes",
+    ],
+  },
+  {
+    ...MEMBERSHIP_PLANS[2],
+    name: "12 Months",
+    description: "Best value & maximum results",
+    features: [
+      ...commonServices,
+      "Everything in 6 Months",
+      "Unlimited PT sessions",
+      "VIP locker",
+      "Free merchandise",
+      "Freeze up to 30 days",
+      "Priority equipment",
+    ],
+  },
 ];
 
 export default function Membership() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
-
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-24 relative overflow-hidden text-center">
           <div className="absolute inset-0 bg-gradient-to-b from-green-500/10 to-transparent" />
-
           <div className="container mx-auto px-4 relative z-10">
             <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">
               Membership Plans
@@ -32,7 +79,8 @@ export default function Membership() {
             </h1>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Flexible membership options designed to fit your lifestyle and
-              help you achieve your fitness goals.
+              help you achieve your fitness goals. All packages include every
+              Power Health service listed below.
             </p>
           </div>
         </section>
@@ -58,13 +106,11 @@ export default function Membership() {
                       </span>
                     </div>
                   )}
-
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                     <p className="text-gray-400 text-sm mb-4">
                       {plan.description}
                     </p>
-
                     <div className="flex items-baseline justify-center gap-1">
                       <span className="text-gray-400">₹</span>
                       <span className="text-5xl font-extrabold text-green-400">
@@ -72,7 +118,6 @@ export default function Membership() {
                       </span>
                       <span className="text-gray-400">/person</span>
                     </div>
-
                     {plan.couplePrice && (
                       <p className="text-sm text-gray-400 mt-2">
                         Couple: ₹{plan.couplePrice}
@@ -84,18 +129,16 @@ export default function Membership() {
                       </p>
                     )}
                   </div>
-
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3">
-                        <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
+                      <li key={feature} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center mt-0.5 shrink-0">
                           <Check className="w-3 h-3 text-black" />
                         </div>
                         <span className="text-sm text-gray-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
-
                   <Link to="/join">
                     <Button
                       size="lg"
@@ -121,7 +164,6 @@ export default function Membership() {
             <h2 className="text-3xl font-bold text-center mb-12">
               Frequently Asked <span className="text-green-400">Questions</span>
             </h2>
-
             <div className="max-w-3xl mx-auto space-y-4">
               {[
                 {
@@ -153,7 +195,6 @@ export default function Membership() {
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );
