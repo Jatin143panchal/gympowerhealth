@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import founderImage from "@/IMG_9438.JPG";
-import trainer2 from "@/assets/trainer-2.jpg";
-import trainer3 from "@/assets/trainer-3.jpg";
+import trainer2 from "@/assets/trainer-2.jpg";   // Club Manager Sumit
+import trainer3 from "@/assets/trainer-3.jpg";   // Assistant Manager Satyam
 
 const trainers = [
   {
@@ -20,26 +20,25 @@ const trainers = [
     ],
   },
   {
-    name: "Suraj Sharma",
-    role: "Fitness  • HIIT & Classes",
+    name: "Sumit",
+    role: "Club Manager",
     image: trainer2,
-
     specialties: [
-      "High-Intensity Interval Training",
-      "Group Fitness Programs",
-      "Dance & Functional Workouts",
-      "Motivation & Lifestyle Coaching",
+      "Gym Operations Management",
+      "Member Experience & Retention",
+      "Staff Coordination",
+      "Facility & Equipment Oversight",
     ],
   },
   {
-    name: "Sujata",
-    role: "Performance Coach • Athletes",
+    name: "Satyam",
+    role: "Assistant Manager",
     image: trainer3,
     specialties: [
-      "Sports Performance",
-      "Recovery & Mobility",
-      "Injury-Safe Training",
-      "Speed & Agility",
+      "Daily Operations Support",
+      "Member Support & Queries",
+      "Class & Schedule Coordination",
+      "Front Desk & Service Excellence",
     ],
   },
 ];
@@ -80,11 +79,10 @@ export function TrainersSection() {
             Meet Our Team
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold mt-2 mb-4 text-white">
-            EXPERT <span className="text-green-400">TRAINERS</span>
+            OUR <span className="text-green-400">TEAM</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Train with a team of certified professionals who bring years of experience in
-            strength, conditioning, HIIT and athletic performance coaching.
+            Led by our experienced owner and supported by dedicated club managers who ensure smooth operations and the best member experience.
           </p>
         </motion.div>
 
@@ -114,7 +112,7 @@ export function TrainersSection() {
                 />
               </div>
 
-              {/* Content BELOW Image */}
+              {/* Content */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-white">
                   {trainer.name}
@@ -123,7 +121,6 @@ export function TrainersSection() {
                   {trainer.role}
                 </p>
 
-                {/* Specialties */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {trainer.specialties.map((specialty) => (
                     <span
@@ -135,9 +132,8 @@ export function TrainersSection() {
                   ))}
                 </div>
 
-                {/* About Me */}
                 <p className="text-sm text-gray-300 leading-relaxed">
-                  From beginners to advanced athletes, our trainers design safe and
+                  From beginners to advanced athletes, our team designs safe and
                   effective programs tailored to your goals so you see real progress in
                   strength, stamina and physique.
                 </p>
