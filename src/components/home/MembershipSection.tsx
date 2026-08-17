@@ -29,8 +29,6 @@ const plans = [
     description: "Perfect starter plan",
     features: [
       ...commonServices,
-      "24/7 Gym Access",
-      "Locker & Shower",
     ],
   },
   {
@@ -40,10 +38,6 @@ const plans = [
     popular: true,
     features: [
       ...commonServices,
-      "Everything in 3 Months",
-      "Priority Support",
-      "Guest Passes",
-      "Pick & Drop (3km)",
     ],
   },
   {
@@ -52,12 +46,6 @@ const plans = [
     description: "Best value & maximum results",
     features: [
       ...commonServices,
-      "Everything in 6 Months (including Pickup & Drop 3 km)",
-      "Unlimited PT Sessions",
-      "Custom Meal Plans",
-      "VIP Locker",
-      "Free Merchandise",
-      "30 Days Freeze",
     ],
   },
 ];
@@ -106,8 +94,7 @@ export function MembershipSection() {
             </span>
           </h2>
           <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            Flexible pricing built for beginners to elite athletes.  
-            All packages include every Power Health service.
+            All packages include every Power Health service from the official flyer.
           </p>
         </motion.div>
 
@@ -143,9 +130,8 @@ export function MembershipSection() {
               {/* Header */}
               <div className="text-center mb-8">
                 <h3 className="text-white text-2xl font-bold">{plan.name}</h3>
-                <p className="text-gray-400 text-sm mt-2">
-                  {plan.description}
-                </p>
+                <p className="text-gray-400 text-sm mt-2">{plan.description}</p>
+
                 <div className="flex justify-center items-end gap-1 mt-4">
                   <span className="text-gray-400">₹</span>
                   <motion.span
@@ -159,6 +145,7 @@ export function MembershipSection() {
                   </motion.span>
                   <span className="text-gray-400 text-sm">/person</span>
                 </div>
+
                 {plan.couplePrice && (
                   <p className="text-sm text-gray-400 mt-2">
                     Couple: ₹{plan.couplePrice}
