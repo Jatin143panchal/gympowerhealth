@@ -4,7 +4,7 @@ import { Instagram, Twitter, Linkedin } from "lucide-react";
 
 import trainer1 from "@/assets/trainer-1.jpg";
 import trainer2 from "@/assets/trainer-2.jpg";
-import trainer3 from "@/assets/trainer-3.jpg";
+import trainer3 from "@/assets/trainer-3.jpeg";
 
 const trainers = [
   {
