@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 /** Primary business number – broadcast messages go from this; chat button opens this */
-export const WHATSAPP_PRIMARY_NUMBER = "919217640317";
+export const WHATSAPP_PRIMARY_NUMBER = "919217451307";
 
 export default function WhatsAppButton() {
   return (
