@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import founderImage from "@/IMG_9438.JPG";
 import trainer2 from "@/assets/trainer-2.jpg"; // Club Manager Sumit
-import trainer3 from "@/assets/trainer-3.jpg"; // Assistant Manager Satyam
+import trainer3 from "@/assets/trainer-3.jpeg"; // Assistant Manager Satyam
 
 const trainers = [
   {
