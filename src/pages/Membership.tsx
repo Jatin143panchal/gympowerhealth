@@ -28,37 +28,20 @@ const plans = [
     ...MEMBERSHIP_PLANS[0],
     name: "3 Months",
     description: "Perfect starter plan",
-    features: [
-      ...commonServices,
-      "Full gym access",
-      "Locker room & changing",
-    ],
+    features: [...commonServices],
   },
   {
     ...MEMBERSHIP_PLANS[1],
     name: "6 Months",
     description: "Most popular choice",
     popular: true,
-    features: [
-      ...commonServices,
-      "Everything in 3 Months",
-      "Priority support",
-      "Guest passes",
-    ],
+    features: [...commonServices],
   },
   {
     ...MEMBERSHIP_PLANS[2],
     name: "12 Months",
     description: "Best value & maximum results",
-    features: [
-      ...commonServices,
-      "Everything in 6 Months",
-      "Unlimited PT sessions",
-      "VIP locker",
-      "Free merchandise",
-      "Freeze up to 30 days",
-      "Priority equipment",
-    ],
+    features: [...commonServices],
   },
 ];
 
@@ -66,6 +49,7 @@ export default function Membership() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
+
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-24 relative overflow-hidden text-center">
@@ -106,11 +90,13 @@ export default function Membership() {
                       </span>
                     </div>
                   )}
+
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                     <p className="text-gray-400 text-sm mb-4">
                       {plan.description}
                     </p>
+
                     <div className="flex items-baseline justify-center gap-1">
                       <span className="text-gray-400">₹</span>
                       <span className="text-5xl font-extrabold text-green-400">
@@ -118,6 +104,7 @@ export default function Membership() {
                       </span>
                       <span className="text-gray-400">/person</span>
                     </div>
+
                     {plan.couplePrice && (
                       <p className="text-sm text-gray-400 mt-2">
                         Couple: ₹{plan.couplePrice}
@@ -129,6 +116,7 @@ export default function Membership() {
                       </p>
                     )}
                   </div>
+
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
@@ -139,6 +127,7 @@ export default function Membership() {
                       </li>
                     ))}
                   </ul>
+
                   <Link to="/join">
                     <Button
                       size="lg"
@@ -164,6 +153,7 @@ export default function Membership() {
             <h2 className="text-3xl font-bold text-center mb-12">
               Frequently Asked <span className="text-green-400">Questions</span>
             </h2>
+
             <div className="max-w-3xl mx-auto space-y-4">
               {[
                 {
@@ -195,6 +185,7 @@ export default function Membership() {
           </div>
         </section>
       </main>
+
       <Footer />
     </div>
   );
