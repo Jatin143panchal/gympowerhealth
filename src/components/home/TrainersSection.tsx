@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import founderImage from "@/IMG_9438.JPG";
-import trainer2 from "@/assets/trainer-2.jpg";   // Club Manager Sumit
-import trainer3 from "@/assets/trainer-3.jpg";   // Assistant Manager Satyam
 
 const trainers = [
   {
@@ -17,28 +15,6 @@ const trainers = [
       "2× Jerai & 4× Sheru Classic Athlete",
       "4× Fit Factor Body Power Finalist",
       "Growth & Strength Exercise Expert for Teenagers",
-    ],
-  },
-  {
-    name: "Sumit",
-    role: "Club Manager",
-    image: trainer2,
-    specialties: [
-      "Gym Operations Management",
-      "Member Experience & Retention",
-      "Staff Coordination",
-      "Facility & Equipment Oversight",
-    ],
-  },
-  {
-    name: "Satyam",
-    role: "Assistant Manager",
-    image: trainer3,
-    specialties: [
-      "Daily Operations Support",
-      "Member Support & Queries",
-      "Class & Schedule Coordination",
-      "Front Desk & Service Excellence",
     ],
   },
 ];
@@ -82,7 +58,7 @@ export function TrainersSection() {
             OUR <span className="text-green-400">TEAM</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Led by our experienced owner and supported by dedicated club managers who ensure smooth operations and the best member experience.
+            Led by our experienced owner who ensures the best training experience and results for every member.
           </p>
         </motion.div>
 
